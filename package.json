@@ -1,0 +1,54 @@
+{
+  "name": "i18n-manager",
+  "version": "0.1.0",
+  "description": "A simple to i18n Module for JavaScript front- and back-end.",
+  "main": "dist/index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "module": "dist/index.js",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src --out-dir ./dist --source-maps",
+    "docs": "jsdoc -t node_modules/clean-jsdoc-theme -r ./src/*.js README.md -d ./docs",
+    "test": "nyc --reporter=lcov mocha -- -R spec tests/ --require @babel/register",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShipyardSuite/i18nManager.git"
+  },
+  "keywords": [],
+  "author": "Shipyard Suite <shipyardsuite@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShipyardSuite/i18nManager/issues"
+  },
+  "homepage": "https://github.com/ShipyardSuite/i18nManager#readme",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "7.9.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "7.9.6",
+    "@babel/register": "7.10.1",
+    "clean-jsdoc-theme": "2.2.11",
+    "chai": "4.2.0",
+    "jsdoc": "3.6.4",
+    "mocha": "7.1.2",
+    "nodemon": "^2.0.2",
+    "nyc": "15.0.1"
+  },
+  "dependencies": {
+    "fsevents": "1.2.9",
+    "node-sass": "4.14.1"
+  }
+}

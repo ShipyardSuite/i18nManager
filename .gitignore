@@ -1,0 +1,5 @@
+/_legacy
+/dist
+/node_modules
+package_lock.json
+.DS_Store
