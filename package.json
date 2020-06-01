@@ -47,8 +47,4 @@
     "nodemon": "^2.0.2",
     "nyc": "15.0.1"
   },
-  "dependencies": {
-    "fsevents": "1.2.9",
-    "node-sass": "4.14.1"
-  }
 }
