@@ -1,3 +1,5 @@
+const path = require('path');
+
 /**
  * This class contains the i18n translation manager.
  */
@@ -11,7 +13,7 @@ class i18nManager
     constructor(language)
     {
         this.language = language || 'en';
-        this.path = './../../../i18n/';
+        this.path = path.join(process.cwd(), '/i18n/');
 
         this.translations = {};
 
@@ -68,9 +70,10 @@ class i18nManager
      * 
      * @param {String} path 
      */
-    setPath(path)
+    setPath(newPath)
     {
-        this.path = path;
+        
+        this.path = path.join(process.cwd(), newPath);
 
         this.getTranslations();
     }

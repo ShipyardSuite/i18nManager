@@ -1,6 +1,6 @@
 {
-  "name": "i18n-manager",
-  "version": "0.1.0",
+  "name": "@shipyardsuite/i18n-manager",
+  "version": "0.1.1",
   "description": "A simple to i18n Module for JavaScript front- and back-end.",
   "main": "dist/index.js",
   "directories": {
@@ -22,7 +22,7 @@
   },
   "keywords": [],
   "author": "Shipyard Suite <shipyardsuite@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/ShipyardSuite/i18nManager/issues"
   },
@@ -40,11 +40,13 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "7.9.6",
     "@babel/register": "7.10.1",
-    "clean-jsdoc-theme": "2.2.11",
+    "babel-plugin-add-module-exports": "1.0.2",
     "chai": "4.2.0",
+    "clean-jsdoc-theme": "2.2.11",
     "jsdoc": "3.6.4",
     "mocha": "7.1.2",
     "nodemon": "^2.0.2",
     "nyc": "15.0.1"
-  }
+  },
+  "dependencies": {}
 }

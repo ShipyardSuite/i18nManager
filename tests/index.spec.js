@@ -22,14 +22,12 @@ describe("i18nManager", () => {
         });
         
         it("should throw an error if no translations found", () => {
-            translations.setPath('./../i18n/');
-            
+            translations.setPath('./i18n/');
             expect(translations.translations).to.equal(undefined);
         });
-
+        
         it("should load example translations", () => {
-            translations.setPath('./i18n/');
-
+            translations.setPath('./tests/i18n/');
             expect(translations.translations).to.not.equal(undefined);
         });
 
