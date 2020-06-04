@@ -1,0 +1,7 @@
+/_legacy
+/src
+/coverage
+/.nyc_output
+/.circleci
+.DS_Store
+.babelrc
