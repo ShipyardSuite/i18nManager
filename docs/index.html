@@ -69,10 +69,60 @@
         <article><h1>i18nManager</h1>
 <p>A simple to i18n Module for JavaScript front- and back-end.</p>
 <h2>Installation</h2>
-<pre class="prettyprint source lang-bash"><code>$ npm i --save @opuscapita/i18n
+<pre class="prettyprint source lang-bash"><code>$ npm i --save @shipyardsuite/i18n-manager
 </code></pre>
 <h2>Usage</h2>
-<p>...</p>
+<h3>Perquisite</h3>
+<ol>
+<li>Create a folder called <code>i18n</code> in your applications root folder.</li>
+<li>Create translation files named after the short form of the language and an index.js file in the folder,</li>
+<li>Import the translation files into the index file.</li>
+</ol>
+<p><strong>EXAMPLE FILES:</strong></p>
+<p>./i18n/de.js</p>
+<pre class="prettyprint source lang-javascript"><code>export const de = {
+    test:
+    {
+        firstMessage: &quot;Hallo Welt!&quot;,
+        secondMessage: &quot;Es {val}.&quot;
+    }
+};
+</code></pre>
+<p>./i18n/en.js</p>
+<pre class="prettyprint source lang-javascript"><code>export const en = {
+    test:
+    {
+        firstMessage: &quot;Hello World!&quot;,
+        secondMessage: &quot;This {val}.&quot;
+    }
+};
+
+</code></pre>
+<p>./i18n/index.js</p>
+<pre class="prettyprint source lang-javascript"><code>import { de } from './de';
+import { en } from './en';
+
+export { de, en };
+export default { de, en };
+</code></pre>
+<h3>Getting translations</h3>
+<h4>1. Import the module.</h4>
+<p><strong>ES6:</strong></p>
+<pre class="prettyprint source lang-javascript"><code>import i18nManager from &quot;@shipyardsuite/i18n-manager&quot;;
+</code></pre>
+<p><strong>NodeJS:</strong></p>
+<pre class="prettyprint source lang-javascript"><code>const i18nManager = require(&quot;@shipyardsuite/i18n-manager&quot;);
+</code></pre>
+<h4>2. Create an instance, and call the determined language (en, de, ...) in the constructor.</h4>
+<pre class="prettyprint source lang-javascript"><code>const translations = new i18nManager();
+</code></pre>
+<h4>3. Call the message according to the json path you set up in the translation file.</h4>
+<pre class="prettyprint source lang-javascript"><code>translations.message(&quot;test.sentence&quot;);
+</code></pre>
+<p>Or, if you need to supply a value</p>
+<pre class="prettyprint source lang-javascript"><code>translations.messageWithValue(&quot;test.sentence&quot;, value);
+</code></pre>
+<h4>5. Your output now should show the selected message, or [MISSING] if you did not set the right path.</h4>
 <h2>License</h2>
 <p>This project is released under the <a href="LICENSE">Apache version 2</a> license.</p></article>
     </section>
