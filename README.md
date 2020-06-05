@@ -1,11 +1,11 @@
-![Codecov branch](https://img.shields.io/codecov/c/github/ShipyardSuite/i18nManager/develop?label=coverage&logo=codecov&logoColor=ffffff&style=flat-square)
-![Codacy branch grade](https://img.shields.io/codacy/grade/c2a82a8360e146a48aff6276b6f93c6f/develop?label=code%20quality%20&logo=codacy&style=flat-square)
+# i18nManager
+
+![Codacy branch coverage](https://img.shields.io/codacy/coverage/9bb55b5dba5646299ed7c1441af722a2/develop?logo=codacy&style=flat-square)
+![Codacy branch grade](https://img.shields.io/codacy/grade/9bb55b5dba5646299ed7c1441af722a2/develop?label=code%20quality%20&logo=codacy&style=flat-square)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/shipyardsuite/i18nManager/develop?logo=github&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues-raw/shipyardsuite/i18nManager?logo=github&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/shipyardsuite/i18nManager?style=flat-square)
 ![npm (scoped)](https://img.shields.io/npm/v/@shipyardsuite/i18n-manager?style=flat-square)
-
-# i18nManager
 
 A simple to i18n Module for JavaScript front- and back-end.
 
