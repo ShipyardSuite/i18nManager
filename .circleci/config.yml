@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-       - run:
+      - run:
           name: "upload test coverage to codecov"
           command: "bash <(curl -s https://codecov.io/bash)"
 
