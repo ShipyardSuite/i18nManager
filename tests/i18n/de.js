@@ -1,7 +1,7 @@
 export const de = {
     test:
     {
-        firstMessage: "Hallo Welt!",
-        secondMessage: "Es {val}."
+        firstMessage: 'Hallo Welt!',
+        secondMessage: 'Es {val}.'
     }
 };
