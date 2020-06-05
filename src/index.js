@@ -5,6 +5,7 @@ const path = require('path');
  */
 class i18nManager
 {
+    
     /**
      * @constructor
      * 
@@ -40,11 +41,13 @@ class i18nManager
     {
         let translationFiles;
 
-        try {
+        try
+        {
             translationFiles = require(this.path);
         }
-        catch (e) {
-            // console.log("Translation files not found.")
+        catch (e) 
+        {
+            console.log('Translation files not found.');
         }
         this.translations = translationFiles;
     }
