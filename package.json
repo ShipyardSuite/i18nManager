@@ -1,6 +1,6 @@
 {
   "name": "@shipyardsuite/i18n-manager",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple to i18n Module for JavaScript front- and back-end.",
   "main": "dist/index.js",
   "directories": {

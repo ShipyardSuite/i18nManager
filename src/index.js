@@ -1,11 +1,11 @@
-const path = require('path');
+const translations = require('./../../../../i18n');
 
 /**
  * This class contains the i18n translation manager.
  */
-class i18nManager
+export class i18nManager
 {
-    
+
     /**
      * @constructor
      * 
@@ -14,42 +14,9 @@ class i18nManager
     constructor(language)
     {
         this.language = language || 'en';
-        this.path = path.join(process.cwd(), '/i18n/');
-
         this.translations = {};
 
         this.getTranslations();
-    }
-
-    /**
-     * Searches for nested objects in the translation object.
-     * 
-     * @param {Object} nestedObj 
-     * @param {Array} pathArr 
-     * 
-     * @returns {Object}
-     */
-    searchNestedObject(nestedObj, pathArr)
-    {
-        return pathArr.reduce((obj, key) => (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
-    }
-
-    /**
-     * Gets all translations.
-     */
-    getTranslations()
-    {
-        let translationFiles;
-
-        try
-        {
-            translationFiles = require(this.path);
-        }
-        catch (e) 
-        {
-            console.log('Translation files not found.');
-        }
-        this.translations = translationFiles;
     }
 
     /**
@@ -73,12 +40,37 @@ class i18nManager
      * 
      * @param {String} path 
      */
-    setPath(newPath)
+    setPath(path)
     {
-        
-        this.path = path.join(process.cwd(), newPath);
+
+        /**
+         * @todo Make setPath() method working.
+         * @body currently this is not working due to the way translations are imported.
+         */
+        this.path = path;
 
         this.getTranslations();
+    }
+
+    /**
+     * Gets all translations.
+     */
+    getTranslations()
+    {
+        this.translations = translations;
+    }
+
+    /**
+     * Searches for nested objects in the translation object.
+     * 
+     * @param {Object} nestedObj 
+     * @param {Array} pathArr 
+     * 
+     * @returns {Object}
+     */
+    searchNestedObject(nestedObj, pathArr)
+    {
+        return pathArr.reduce((obj, key) => (obj && obj[key] !== 'undefined') ? obj[key] : undefined, nestedObj);
     }
 
     /**
@@ -94,7 +86,7 @@ class i18nManager
     message(key)
     {
         const searchElements = key.split('.');
-        const response = this.searchNestedObject(this.translations[this.language], searchElements);
+        const response = this.searchNestedObject(translations[this.language], searchElements);
 
         return response !== undefined ? response : '[MISSING]';
     }
@@ -115,5 +107,3 @@ class i18nManager
         return this.message(key) !== '[MISSING]' ? this.message(key).replace('{val}', val) : this.message(key);
     }
 }
-
-export default i18nManager;
