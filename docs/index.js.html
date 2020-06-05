@@ -64,6 +64,7 @@
  */
 class i18nManager
 {
+    
     /**
      * @constructor
      * 
@@ -99,11 +100,13 @@ class i18nManager
     {
         let translationFiles;
 
-        try {
+        try
+        {
             translationFiles = require(this.path);
         }
-        catch (e) {
-            // console.log("Translation files not found.")
+        catch (e) 
+        {
+            console.log('Translation files not found.');
         }
         this.translations = translationFiles;
     }
@@ -172,7 +175,8 @@ class i18nManager
     }
 }
 
-export default i18nManager;</code></pre>
+export default i18nManager;
+</code></pre>
         </article>
     </section>
 
