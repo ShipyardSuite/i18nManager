@@ -21,6 +21,9 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+      - run:
+          name: "upload test coverage to codacy"
+          command: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l JavaScript -r coverage/lcov.info
 
       - save_cache:
           paths:
@@ -56,3 +59,6 @@ workflows:
           filters:
             tags:
               only: /^v.*/
+            branches:
+              only:
+                - master
